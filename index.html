@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazig Atesh - Магия Огня</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="photo1.jpg" alt="Логотип Amazig Atesh" class="logo">
+        <div class="title-container">
+            <h1 class="blur-title">Amazig Atesh</h1>
+            <h1>Amazig Atesh</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="vertical-menu">
+            <li><a href="index.html">ГЛАВНАЯ</a></li>
+            <li><a href="candles.html">СВЕЧИ</a></li>
+            <li><a href="about.html">О НАС</a></li>
+        </ul>
+    </nav>
+
+    <!-- Раздел "О компании" -->
+<section class="about-company">
+    <h2>О компании</h2>
+    <p>
+        Мы предлагаем <strong>свечи</strong> для различных ритуалов и программ, 
+        которые подойдут как <strong>новичкам</strong>, так и <strong>опытным магам</strong>. 
+        У нас вы сможете найти:
+    </p>
+    <ul>
+        <li>🕯️ <strong>Программные свечи</strong> для целей и намерений</li>
+        <li>🔮 <strong>Ритуальные свечи</strong> для очищения и защиты</li>
+        <li>✨ <strong>Уникальные композиции</strong>, разработанные специально для вас (по предварительной записи)</li>
+    </ul>
+    <p>
+        Покупая свечу — вы получаете <strong>полный набор</strong> для ритуала с описанием правильного проведения.
+    </p>
+</section>
+
+
+    <section class="animated-section">
+        <h2>ОТЗЫВЫ КЛИЕНТОВ</h2>
+        <div class="reviews">
+            <p><strong>Мария:</strong> "Свечи просто волшебные! Чувствуется мощная энергетика."</p>
+            <p><strong>Алексей:</strong> "Обряд на удачу сработал идеально, благодарю!"</p>
+            <p><strong>Елена:</strong> "Свечи действительно меняют атмосферу в доме, рекомендую."</p>
+        </div>
+        <button class="review-btn" onclick="openReviewForm()">ОСТАВИТЬ ОТЗЫВ</button>
+
+        <div id="review-form" class="hidden">
+            <textarea id="review-text" placeholder="Напишите ваш отзыв..."></textarea>
+            <button onclick="submitReview()">ОТПРАВИТЬ</button>
+        </div>
+    </section>
+
+    <footer>
+        <h2>НАШИ СОЦСЕТИ</h2>
+        <a href="https://youtube.com/@amazigatesh">YouTube</a> |
+        <a href="https://www.tiktok.com/@amazig_atesh">TikTok</a> |
+        <a href="https://t.me/amazig_atesh">Telegram</a>
+    </footer>
+
+    <script>
+        function openReviewForm() {
+            document.getElementById('review-form').classList.toggle('hidden');
+        }
+
+        function submitReview() {
+            let text = document.getElementById('review-text').value;
+            if (text.trim() !== "") {
+                let reviewContainer = document.querySelector('.reviews');
+                let newReview = document.createElement('p');
+                newReview.innerHTML = `<strong>Новый отзыв:</strong> ${text}`;
+                reviewContainer.appendChild(newReview);
+                document.getElementById('review-text').value = "";
+                document.getElementById('review-form').classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
